@@ -54,6 +54,17 @@ It carries the same navigation components as the category pages, plus two conver
 - **Breadcrumbs, attribute tags and the SEO spec panel.** Home / Wheels / Super Single / Classic
   Super Single, with the wheel type and fitment tags linking back to their pages, so the product
   sits inside the taxonomy rather than hanging off it.
+- **Layout fixes carried in the duplicate.** The saved source had the Ahrefs SEO toolbar baked in
+  as the first node of `<body>`, which rendered as a tall empty bar above the header; it is stripped.
+  The hero gallery was saved mid-flexslider, so the slider re-initialised over its own cloned DOM and
+  stacked every slide and caption across the hero; it is rebuilt as a plain main image plus
+  thumbnails that needs no slider.
+- **Specifications restructured to match the stainless product page.** Production put Specifications
+  and the project gallery in a narrow column beside the wheel renders, so the part-number rows wrapped
+  a character at a time and the photos sat in a cramped static grid. The page now runs: hero (H1,
+  renders, finishes) -> project gallery as a full-width horizontal carousel -> **Specifications**
+  across the full width, wheel vitals on the left and part numbers, finishes and Add to Quote on the
+  right, with View quote beneath.
 - **Persistent add bar.** The Specifications table is the only place on the page a buyer can act,
   and it leaves the viewport early. A bar appears once that table has scrolled past and stays
   anchored to the bottom of the window: finish picker (all three variants, selectable without

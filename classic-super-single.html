@@ -1427,8 +1427,79 @@ body.ag-sticky-on{padding-bottom:calc(var(--ag-sticky-h,80px) + 8px)}
   .ag-contactcta__btn{flex:1 1 100%}
 }
 </style>
+
+<style id="ag-product-layout">
+/* --- hero gallery ---------------------------------------------------------
+   The saved page carries flexslider's already-initialised DOM (cloned slides,
+   inline widths, a thumbnail <ol>), which re-initialises on load and stacks
+   every slide and caption on top of the hero. Replaced with a plain
+   main-image + thumbnails block that needs no slider at all.
+   ------------------------------------------------------------------------ */
+.ag-gallery{display:flex;flex-direction:column;gap:14px;width:100%}
+.ag-gallery__main{position:relative;display:flex;align-items:center;justify-content:center}
+.ag-gallery__main img{max-width:100%;height:auto;display:block}
+.ag-gallery__cap{position:absolute;left:0;bottom:0;
+  font:700 11px/1 "Montserrat",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  color:#F58220;background:rgba(0,0,0,.55);padding:7px 11px}
+.ag-gallery__thumbs{display:flex;gap:12px;flex-wrap:wrap}
+.ag-gallery__thumb{padding:0;margin:0;background:transparent;border:1px solid rgba(255,255,255,.18);
+  width:84px;height:84px;cursor:pointer;transition:.16s ease}
+.ag-gallery__thumb img{width:100%;height:100%;object-fit:contain;display:block}
+.ag-gallery__thumb:hover{border-color:#F58220}
+.ag-gallery__thumb.is-active{border-color:#F58220;box-shadow:0 0 0 1px #F58220 inset}
+
+/* --- project gallery: full-width band above the specs --------------------- */
+.ag-shotsband{background:#000;padding:0 max(20px,6vw) 8px}
+.ag-shots{position:relative}
+.ag-shots__track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:26px 0 18px;scrollbar-width:thin}
+.ag-shots__track::-webkit-scrollbar{height:6px}
+.ag-shots__track::-webkit-scrollbar-track{background:#1c1c1c}
+.ag-shots__track::-webkit-scrollbar-thumb{background:#F58220}
+.ag-shots__item{flex:0 0 clamp(240px,30%,420px);scroll-snap-align:start;margin:0;
+  background:#111;overflow:hidden}
+.ag-shots__item img{width:100%;height:auto;display:block;transition:transform .3s ease}
+.ag-shots__item:hover img{transform:scale(1.05)}
+.ag-shots__item figcaption{font:500 12px/1.5 "Montserrat",Arial,sans-serif;color:#a9a9a9;
+  padding:10px 12px 12px}
+.ag-shots__nav{position:absolute;top:calc(50% - 18px);width:38px;height:38px;border:0;cursor:pointer;
+  background:rgba(0,0,0,.72);color:#fff;font-size:20px;line-height:1;z-index:3;transition:.16s ease}
+.ag-shots__nav:hover{background:#F58220}
+.ag-shots__nav--prev{left:-8px}
+.ag-shots__nav--next{right:-8px}
+.ag-shots.at-start .ag-shots__nav--prev,
+.ag-shots.at-end .ag-shots__nav--next{opacity:0;pointer-events:none}
+
+/* --- specifications: one full-width band, vitals | part numbers ----------- */
+.ag-specs{background:#000;padding:44px max(20px,6vw) 64px}
+.ag-specs__title{font:400 46px/1 "Agency",Montserrat,Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:1px;color:#fff;margin:0 0 6px;text-shadow:5px 6px 20px #000}
+.ag-specs__grid{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:34px 56px;
+  align-items:start;margin-top:22px}
+.ag-specs__subtitle{font:700 11px/1 "Montserrat",Arial,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:#a9a9a9;margin:0 0 14px}
+.ag-specs .specs-wrapper{max-width:none}
+/* the part-number rows carry their own label in the column subtitle, and the
+   production 250px label column would squeeze them to one character per line */
+.ag-specs__table .spec-item{grid-template-columns:minmax(0,1fr);padding:0;border-bottom:0}
+.ag-specs__table .spec-item > .label{display:none}
+.ag-specs__table .spec-item.multi .value{gap:14px}
+.ag-specs__table .variant-row{padding-bottom:14px;border-bottom:1px solid #333}
+.ag-specs__table .variant-row:last-child{border-bottom:0;padding-bottom:0}
+.ag-specs__actions{margin-top:22px}
+@media(max-width:1024px){.ag-specs__title{font-size:34px}}
+@media(max-width:900px){
+  .ag-specs__grid{grid-template-columns:1fr;gap:30px}
+  .ag-shots__nav{display:none}
+}
+@media(max-width:620px){
+  .ag-specs{padding:34px 20px 48px}
+  .ag-specs__title{font-size:28px}
+  .ag-shotsband{padding:0 20px 8px}
+}
+</style>
 </head>
-<body class="wp-singular product-template-default single single-product postid-4245 wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-child theme-hello-elementor woocommerce woocommerce-page woocommerce-js mega-menu-max-mega-menu-1 mega-menu-max-mega-menu-2 hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page-4231 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit scrollpos-scrolled" data-elementor-device-mode="desktop" cz-shortcut-listen="true"><div id="rcr-wrapper" class="active bottom" style="--tb-color-serp-kd-red-9: #7f3738; --tb-color-serp-kd-red-8: #763c2d; --tb-color-serp-kd-orange-7: #7a4421; --tb-color-serp-kd-orange-6: #784a15; --tb-color-serp-kd-yellow-5: #7b5719; --tb-color-serp-kd-yellow-4: #735e00; --tb-color-serp-kd-yellow-3: #646927; --tb-color-serp-kd-green-2: #4a672e; --tb-color-serp-kd-green-1: #306636; --tb-color-serp-kd-green-0: #17643d; --tb-color-logo: rgba(237, 237, 237, 1); --tb-color-chart-empty: rgba(71, 71, 73, 1); --tb-color-warning-muted: #fce892; --tb-color-warning: #face0d; --tb-color-notice: #3288d7; --tb-color-success-muted: #17643d; --tb-color-success: #27a765; --tb-shadow-elevation3: rgba(0, 0, 0, 0.3); --tb-shadow-elevation2: rgba(0, 0, 0, 0.16); --tb-shadow-elevation1Bottom: rgba(0, 0, 0, 0.08); --tb-shadow-elevation1: rgba(0, 0, 0, 0.01); --tb-shadow-border: rgba(255, 255, 255, 0.15); --tb-background-cta: rgba(249, 226, 4, 1); --tb-background-neutralMidMutedAlpha: rgba(255, 255, 255, 0.15); --tb-background-knob: rgba(255, 255, 255, 1); --tb-background-track: rgba(255, 255, 255, 0.15); --tb-background-dangerMidMuted: #7f3738; --tb-background-dangerMuted: #583537; --tb-background-danger: #f23d3d; --tb-background-successMidMuted: #17643d; --tb-background-successMuted: #2e483b; --tb-background-success: rgba(39, 167, 101, 1); --tb-background-warningMuted: rgba(84, 77, 46, 1); --tb-background-infoMuted: rgba(48, 66, 81, 1); --tb-background-controlDisabled: #424345; --tb-background-controlHoverAlpha: rgba(255, 255, 255, 0.4); --tb-background-controlHover: rgba(255, 255, 255, 0.08); --tb-background-controlActive: rgba(255, 255, 255, 0.26); --tb-background-selectedActive: #63412e; --tb-background-selected: rgba(120, 74, 21, 1); --tb-background-sidebarItemHovered: rgba(255, 255, 255, 0.03); --tb-background-sidebarItemSelected: rgba(255, 255, 255, 0.08); --tb-background-box-serp08: rgba(32, 33, 36, 0.8); --tb-background-box-serp: rgb(32, 33, 36); --tb-background-page: rgba(35, 36, 38, 1); --tb-background-box: rgba(50, 51, 53, 1); --tb-border-dangerMutedHover: rgba(242, 61, 61, 0.6); --tb-border-dangerMuted: rgba(242, 61, 61, 0.4); --tb-border-selectedActive: #886031; --tb-border-selected: rgba(136, 96, 49, 1); --tb-border-controlDisabled: #515253; --tb-border-controlHoverAlpha: rgba(255, 255, 255, 0.4); --tb-border-controlHover: #848586; --tb-border-controlAlpha: rgba(255, 255, 255, 0.26); --tb-border-controlActive: rgba(255, 255, 255, 0.26); --tb-border-lineAlpha: rgba(255, 255, 255, 0.1); --tb-text-color-editorLineNumber-foreground: #858585; --tb-text-link: rgba(128, 202, 255, 1); --tb-text-accent: rgba(255, 136, 0, 1); --tb-text-color-badgeWhite07: rgba(255, 255, 255, 0.7); --tb-text-color-badgeWhite: rgba(255, 255, 255, 1); --tb-text-color-badgeBlack: rgba(13, 13, 13, 1); --tb-text-color-tertiary: rgba(255, 255, 255, 0.32); --tb-text-color-secondary: rgba(255, 255, 255, 0.6); --tb-text-color-primary: rgba(237, 237, 237, 1); --tb-border-color-selected-active: #ba9369;"><div id="rcr-anchor"><div class="ah_tb"><div class="ah_tb-left-col"><a class="css-16rkkpt-logo css-gg9x3g-logo css-1e1c04e-logo css-1ym5y2k-logo css-19gp1y4-logo css-1dsdt4k-logo css-16klgmp-logo css-1iph40r-logo css-1gs5cji-logo css-108dep5-logo css-1gjaoqp-logo css-1hr8ddy-logo css-4nxaj1-logo css-1tbqkfo-logo" href="https://app.ahrefs.com/site-explorer/overview/exact?target=https://armourygroup.com.au/product/us-super-single-tyres/" target="_blank"><svg height="15" width="12" fill="none" viewBox="0 0 12 15" xmlns="http://www.w3.org/2000/svg"><path d="M1.49994 3H8.49603V5.10724L5.73026 5.31231C1.41597 5.63554 0.0664062 6.77709 0.0664062 9.97913V10.6246C0.0664062 12.9683 1.7099 14.3813 4.23325 14.3813C6.22927 14.3813 7.37376 13.9116 8.78288 12.4732H9V13.9995H11.9961V0H1.49994V3ZM8.49603 9.86195C7.61716 10.7408 6.19997 11.3267 5.11407 11.3267C3.94224 11.3267 3.44128 10.8863 3.47058 9.9176C3.49987 8.56804 3.99888 8.24482 6.25856 8.03975L8.49603 7.83467V9.86195Z" fill="#FF8800"></path></svg></a><div class="ah_tb-metrics-wrapper"><div class="ah_barstats-wrapper"><div class="ah_barstats-wrapper-box"><div class="ah_barstats-heading"><span>Domain</span></div><div class="css-gg9x3g-statsBox css-1e1c04e-statsBox css-1qo47w1-statsBox css-2n9bqr-statsBox"><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/overview/subdomains?target=armourygroup.com.au" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">dr</span><span class="css-0-statsItemValue">9</span><svg height="20" width="20" viewBox="0 0 20 20"><circle class="css-hdyoky-ringBg" cx="10" cy="10" fill="transparent" r="7.5" stroke-width="5"></circle><circle class="ah_metriccahrt-ring" cx="10" cy="10" fill="transparent" r="7.5" stroke="#7362BF" stroke-dasharray="47.12388980384689" stroke-dashoffset="42.88273972150067" stroke-width="5" transform="rotate(-90)" style="transform-origin: 50% 50%;"></circle></svg></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/ahrefs-top?domain=armourygroup.com.au" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">ar</span><span class="css-0-statsItemValue">18.8M</span></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/backlinks/subdomains?grouping=all&amp;target=armourygroup.com.au" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">bl</span><span class="css-0-statsItemValue">829</span></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/refdomains/subdomains?target=armourygroup.com.au" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">rd</span><span class="css-0-statsItemValue">372</span></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/organic-keywords/subdomains?target=armourygroup.com.au" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">kw</span><span class="css-0-statsItemValue">101</span></a></div><div class="ah_barstats-metric-wrapper"><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/top-pages/subdomains?target=armourygroup.com.au" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">st</span><span class="css-0-statsItemValue">523</span></a></div><div class="ah_barstats-metric-subdata"><div class="ah_tb-tooltip">$217</div></div></div></div></div><div class="ah_barstats-wrapper-box"><div class="ah_barstats-heading"><span>Page</span></div><div class="css-gg9x3g-statsBox css-1e1c04e-statsBox css-1qo47w1-statsBox css-2n9bqr-statsBox"><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/overview/exact?target=https://armourygroup.com.au/product/us-super-single-tyres/" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">ur</span><span class="css-0-statsItemValue">4</span><svg height="20" width="20" viewBox="0 0 20 20"><circle class="css-hdyoky-ringBg" cx="10" cy="10" fill="transparent" r="7.5" stroke-width="5"></circle><circle class="ah_metriccahrt-ring" cx="10" cy="10" fill="transparent" r="7.5" stroke="#92BB39" stroke-dasharray="47.12388980384689" stroke-dashoffset="45.23893421169302" stroke-width="5" transform="rotate(-90)" style="transform-origin: 50% 50%;"></circle></svg></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/backlinks/exact?grouping=all&amp;target=https://armourygroup.com.au/product/us-super-single-tyres/" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">bl</span><span class="css-0-statsItemValue">1</span></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/refdomains/exact?target=https://armourygroup.com.au/product/us-super-single-tyres/" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">rd</span><span class="css-0-statsItemValue">1</span></a></div><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/organic-keywords/exact?target=https://armourygroup.com.au/product/us-super-single-tyres/" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">kw</span><span class="css-0-statsItemValue">5</span></a></div><div class="ah_barstats-metric-wrapper"><div class="ah_tb-tooltip"><a class="css-1a53dbp-statsItem css-1w1qp7q-statsItem css-nq1epw-statsItem css-1e2a3x0-statsItem css-uwld9a-statsItem css-1ubfr25-statsItem css-qe34fn-statsItem css-1v2wdqo-statsItem css-163my9l-statsItem css-29v1zy-statsItem css-12p1xcv-statsItem css-e2se9o-statsItem css-towgw4-statsItem css-girkb2-statsItem css-1s7mw1r-statsItem css-26p60m-statsItem css-8uceha-statsItem" href="https://app.ahrefs.com/site-explorer/top-pages/exact?target=https://armourygroup.com.au/product/us-super-single-tyres/" rel="noopener noreferrer" target="_blank"><span class="css-0-statsItemLabel">st</span><span class="css-0-statsItemValue">51</span></a></div><div class="ah_barstats-metric-subdata"><div class="ah_tb-tooltip">$0</div></div></div></div></div><div class="ah_tb-web-vitals-bar ah_tb-web-vitals"><button class="ah_tb-btn ah_tb-btn-sm ah_tb-web-vitals-btn"><span class="ah_tb-btn-icon"><svg height="14" width="14" fill="none" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><path d="M11.2426 2.75736C10.1569 1.67157 8.65685 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13C9.973 13 12.441 10.8377 12.917 8H11.0802C10.6316 9.8368 8.97499 11.2 7 11.2C4.6804 11.2 2.8 9.3196 2.8 7C2.8 4.6804 4.6804 2.8 7 2.8C8.1598 2.8 9.2098 3.2701 9.96985 4.03015L8 6H13V1L11.2426 2.75736Z" fill="#333333"></path></svg></span><span>Web Vitals</span></button></div></div></div></div><div class="ah_tb-right-col"><div class="ah_tb-tooltip"><div class="ah_tb-icon-wrapper"><svg height="12" width="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" class="ah_toolbar-icon2"><path d="M7 5V0H5V5H0V7H5V12H7V7H12V5H7Z" fill="#333333"></path></svg></div></div><div class="ah_tb-tooltip"><div class="ah_tb-icon-wrapper"><svg class="ah_toolbar-icon2" height="14" width="14" fill="none" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M12 7C12 9.76142 9.76142 12 7 12C5.98096 12 5.03312 11.6951 4.2427 11.1717L11.1717 4.2427C11.6951 5.03312 12 5.98096 12 7ZM2.82846 9.75748L9.75748 2.82846C8.96703 2.3049 8.01912 2 7 2C4.23858 2 2 4.23858 2 7C2 8.01912 2.3049 8.96703 2.82846 9.75748ZM14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7C0 3.13401 3.13401 0 7 0C10.866 0 14 3.13401 14 7Z" fill-rule="evenodd"></path></svg></div></div></div></div></div></div>
+<body class="wp-singular product-template-default single single-product postid-4245 wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-child theme-hello-elementor woocommerce woocommerce-page woocommerce-js mega-menu-max-mega-menu-1 mega-menu-max-mega-menu-2 hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page-4231 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit scrollpos-scrolled" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 
 <div class="hellochild__body-wrap"><!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDQRJCNX"
@@ -1890,25 +1961,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="elementor-element elementor-element-85acba3 e-con-full thumbnail e-flex e-con e-child" data-id="85acba3" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-41b86b3 elementor-widget__width-initial yes elementor-widget elementor-widget-woocommerce-product-images" data-id="41b86b3" data-element_type="widget" data-e-type="widget" data-widget_type="woocommerce-product-images.default">
 				<div class="elementor-widget-container">
-					<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-2 images" data-columns="2" style="opacity: 1; transition: opacity 0.25s ease-in-out;">
-	
-<div class="flex-viewport" style="overflow: hidden; position: relative; height: 701.797px; transition: none;"><div class="woocommerce-product-gallery__wrapper" style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-		<div data-thumb="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside.png" data-thumb-alt="Drive/Steer Alloy Truck Wheel – Outside Face View of 22.5&quot; x 8.25&quot; Polished Rim with Valve Stem" data-thumb-srcset="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside.png 820w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-150x150.png 150w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-300x300.png 300w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-768x768.png 768w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-340x340.png 340w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-487x487.png 487w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-400x400.png 400w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-100x100.png 100w" data-thumb-sizes="(max-width: 201px) 100vw, 201px" class="woocommerce-product-gallery__image flex-active-slide" style="width: 701.812px; margin-right: 0px; float: left; display: block;"><a href="./assets/CLASSIC-SUPER-SINGLE_outside.png"><img loading="lazy" width="820" height="820" src="./assets/CLASSIC-SUPER-SINGLE_outside.png" class="wp-post-image" alt="Drive/Steer Alloy Truck Wheel – Outside Face View of 22.5&quot; x 8.25&quot; Polished Rim with Valve Stem" data-caption="Outside View" data-src="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside.png" data-large_image="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside.png" data-large_image_width="820" data-large_image_height="820" decoding="async" srcset="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside.png 820w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-150x150.png 150w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-300x300.png 300w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-768x768.png 768w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-340x340.png 340w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-487x487.png 487w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-400x400.png 400w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-100x100.png 100w" sizes="(max-width: 820px) 100vw, 820px" draggable="false"></a></div><div data-thumb="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside.png" data-thumb-alt="Drive/Steer Alloy Truck Wheel – Inside Hub View of 22.5&quot; x 8.25&quot; Rim for Dual Fitment Applications" data-thumb-srcset="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside.png 820w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-150x150.png 150w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-300x300.png 300w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-768x768.png 768w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-340x340.png 340w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-487x487.png 487w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-400x400.png 400w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-100x100.png 100w" data-thumb-sizes="(max-width: 201px) 100vw, 201px" class="woocommerce-product-gallery__image" style="width: 701.812px; margin-right: 0px; float: left; display: block;"><a href="./assets/CLASSIC-SUPER-SINGLE_inside.png"><img loading="lazy" width="820" height="820" src="./assets/CLASSIC-SUPER-SINGLE_inside.png" class="" alt="Drive/Steer Alloy Truck Wheel – Inside Hub View of 22.5&quot; x 8.25&quot; Rim for Dual Fitment Applications" data-caption="Inside View" data-src="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside.png" data-large_image="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside.png" data-large_image_width="820" data-large_image_height="820" decoding="async" srcset="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside.png 820w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-150x150.png 150w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-300x300.png 300w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-768x768.png 768w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-340x340.png 340w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-487x487.png 487w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-400x400.png 400w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-100x100.png 100w" sizes="(max-width: 820px) 100vw, 820px" draggable="false"></a></div>	</div></div><ol class="flex-control-nav flex-control-thumbs"><li><img onload="this.width = this.naturalWidth; this.height = this.naturalHeight" src="./assets/CLASSIC-SUPER-SINGLE_outside.png" srcset="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside.png 820w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-150x150.png 150w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-300x300.png 300w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-768x768.png 768w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-340x340.png 340w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-487x487.png 487w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-400x400.png 400w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_outside-100x100.png 100w" sizes="(max-width: 201px) 100vw, 201px" alt="Drive/Steer Alloy Truck Wheel – Outside Face View of 22.5&quot; x 8.25&quot; Polished Rim with Valve Stem" class="flex-active" draggable="false" width="201" height="201"><span class="flexthum-title">Outside View</span></li><li><img onload="this.width = this.naturalWidth; this.height = this.naturalHeight" src="./assets/CLASSIC-SUPER-SINGLE_inside.png" srcset="https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside.png 820w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-150x150.png 150w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-300x300.png 300w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-768x768.png 768w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-340x340.png 340w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-487x487.png 487w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-400x400.png 400w, https://armourygroup.com.au/wp-content/uploads/2024/04/CLASSIC-SUPER-SINGLE_inside-100x100.png 100w" sizes="(max-width: 201px) 100vw, 201px" alt="Drive/Steer Alloy Truck Wheel – Inside Hub View of 22.5&quot; x 8.25&quot; Rim for Dual Fitment Applications" draggable="false" width="201" height="201"><span class="flexthum-title">Inside View</span></li></ol></div>
+					<div class="ag-gallery" data-ag-gallery><div class="ag-gallery__main"><img id="ag-gallery-main" src="./assets/CLASSIC-SUPER-SINGLE_outside.png" alt="Drive/Steer Alloy Truck Wheel – Outside Face View of 22.5&quot; x 8.25&quot; Polished Rim with Valve Stem"><span class="ag-gallery__cap" id="ag-gallery-cap">Outside View</span></div><div class="ag-gallery__thumbs"><button type="button" class="ag-gallery__thumb is-active" data-src="./assets/CLASSIC-SUPER-SINGLE_outside.png" data-cap="Outside View" aria-label="Outside View"><img src="./assets/CLASSIC-SUPER-SINGLE_outside.png" alt=""></button><button type="button" class="ag-gallery__thumb" data-src="./assets/CLASSIC-SUPER-SINGLE_inside.png" data-cap="Inside View" aria-label="Inside View"><img src="./assets/CLASSIC-SUPER-SINGLE_inside.png" alt=""></button></div></div>
 				</div>
 				</div>
 				</div>
-		<div class="elementor-element elementor-element-5ab1493 e-con-full e-flex e-con e-child" data-id="5ab1493" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-6254a91 elementor-widget__width-initial elementor-widget elementor-widget-heading" data-id="6254a91" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Specifications</h2>				</div>
-				</div>
-		<div class="elementor-element elementor-element-375ae72 e-con-full e-flex e-con e-child" data-id="375ae72" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-d125a88 elementor-widget elementor-widget-shortcode" data-id="d125a88" data-element_type="widget" data-e-type="widget" data-widget_type="shortcode.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-shortcode"><div class="specs-wrapper"><div class="spec-item">
+		
+				</div><section class="ag-shotsband"><div class="ag-shots" data-ag-shots><button type="button" class="ag-shots__nav ag-shots__nav--prev" aria-label="Previous images">&#8249;</button><div class="ag-shots__track"><figure class="ag-shots__item"><img loading="lazy" src="./assets/ara249-466x344.jpg" alt="Custom Blue Mack Super-Liner Fitted with Classic Super Single Wheels – US Fitment Showcase"><figcaption>Custom Blue Mack Super-Liner Fitted with Classic Super Single Wheels</figcaption></figure><figure class="ag-shots__item"><img loading="lazy" src="./assets/2-9-466x344.jpg" alt="Kenworth Cabover Prime Mover Featuring Classic Super Single Wheels – Bobbins Transport Fleet"><figcaption>Kenworth Cabover Prime Mover Featuring Classic Super Single Wheels</figcaption></figure><figure class="ag-shots__item"><img loading="lazy" src="./assets/1-8-466x344.jpg" alt="Kenworth T900 with Classic Super Single Alloy Wheels – Road Train Ready at Kenworth Yatala"><figcaption>Kenworth T900 with Classic Super Single Alloy Wheels</figcaption></figure><figure class="ag-shots__item"><img loading="lazy" src="./assets/3-6-466x344.jpg" alt="Kenworth W900 Displaying Chrome Detailing and Classic Super Single Wheels – Premium US Fitment"><figcaption>Kenworth W900 Displaying Chrome Detailing and Classic Super Single Wheels</figcaption></figure></div><button type="button" class="ag-shots__nav ag-shots__nav--next" aria-label="Next images">&#8250;</button></div></section><section class="ag-specs" id="specifications"><div class="ag-specs__inner"><h2 class="ag-specs__title">Specifications</h2><div class="ag-specs__grid"><div class="ag-specs__details"><h3 class="ag-specs__subtitle">Wheel vitals</h3><div class="specs-wrapper"><div class="spec-item">
 		<div class="label">Description</div>
 		<div class="value">Classic Super Single</div>
-	</div><div class="spec-item multi">
+	</div><div class="spec-item">
+				<div class="label">Inset (mm)</div>
+				<div class="value">120</div>
+			</div><div class="spec-item">
+				<div class="label">Outset (mm)</div>
+				<div class="value">145</div>
+			</div><div class="spec-item">
+				<div class="label">Thickness (mm)</div>
+				<div class="value">25</div>
+			</div><div class="spec-item">
+				<div class="label">Number Of Stud Holes</div>
+				<div class="value">10</div>
+			</div><div class="spec-item">
+				<div class="label">Stud Hole Dia (mm)</div>
+				<div class="value">26</div>
+			</div><div class="spec-item">
+				<div class="label">Centre Bore Dia (mm)</div>
+				<div class="value">220</div>
+			</div><div class="spec-item">
+				<div class="label">Max Load (kg)</div>
+				<div class="value">4500</div>
+			</div><div class="spec-item">
+				<div class="label">Valve</div>
+				<div class="value">54MS</div>
+			</div><div class="spec-item">
+				<div class="label">Tyre</div>
+				<div class="value">385/65R22.5</div>
+			</div></div></div><div class="ag-specs__tablecol"><h3 class="ag-specs__subtitle">Part numbers and finishes</h3><div class="ag-specs__table"><div class="specs-wrapper"><div class="spec-item multi">
 			<div class="label">Part # / Finish</div>
 			<div class="value"><div class="variant-row">
 
@@ -1952,38 +2040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 				</div>
 
-			</div></div></div><div class="spec-item">
-				<div class="label">Inset (mm)</div>
-				<div class="value">120</div>
-			</div><div class="spec-item">
-				<div class="label">Outset (mm)</div>
-				<div class="value">145</div>
-			</div><div class="spec-item">
-				<div class="label">Thickness (mm)</div>
-				<div class="value">25</div>
-			</div><div class="spec-item">
-				<div class="label">Number Of Stud Holes</div>
-				<div class="value">10</div>
-			</div><div class="spec-item">
-				<div class="label">Stud Hole Dia (mm)</div>
-				<div class="value">26</div>
-			</div><div class="spec-item">
-				<div class="label">Centre Bore Dia (mm)</div>
-				<div class="value">220</div>
-			</div><div class="spec-item">
-				<div class="label">Max Load (kg)</div>
-				<div class="value">4500</div>
-			</div><div class="spec-item">
-				<div class="label">Valve</div>
-				<div class="value">54MS</div>
-			</div><div class="spec-item">
-				<div class="label">Tyre</div>
-				<div class="value">385/65R22.5</div>
-			</div></div></div>
-						</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-0550324 show-on-cart elementor-widget elementor-widget-button" data-id="0550324" data-element_type="widget" data-e-type="widget" data-cart-count="&lt;span id=&quot;hellochild-cart-count&quot; data-wc-cart-count=&quot;0&quot;&gt;&lt;/span&gt;" data-widget_type="button.default">
+			</div></div></div></div></div><div class="ag-specs__actions"><div class="elementor-element elementor-element-0550324 show-on-cart elementor-widget elementor-widget-button" data-id="0550324" data-element_type="widget" data-e-type="widget" data-cart-count="&lt;span id=&quot;hellochild-cart-count&quot; data-wc-cart-count=&quot;0&quot;&gt;&lt;/span&gt;" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 									<div class="elementor-button-wrapper">
 					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://armourygroup.com.au/quote-cart/">
@@ -1993,33 +2050,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</a>
 				</div>
 								</div>
-				</div>
-				<div class="elementor-element elementor-element-6cc4cc9 elementor-widget__width-initial elementor-widget elementor-widget-heading" data-id="6cc4cc9" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">PROJECT GALLERY</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-ce56bb2 gallery-spacing-custom elementor-widget elementor-widget-image-gallery" data-id="ce56bb2" data-element_type="widget" data-e-type="widget" data-widget_type="image-gallery.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-image-gallery">
-			<div id="gallery-1" class="gallery galleryid-4245 gallery-columns-4 gallery-size-product-gallery"><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="ce56bb2" data-elementor-lightbox-title="Custom Blue Mack Super-Liner Fitted with Classic Super Single Wheels – US Fitment Showcase" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NjQyMSwidXJsIjoiaHR0cHM6XC9cL2FybW91cnlncm91cC5jb20uYXVcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjRcLzA0XC9hcmEyNDkuanBnIiwic2xpZGVzaG93IjoiY2U1NmJiMiJ9" href="https://armourygroup.com.au/wp-content/uploads/2024/04/ara249.jpg"><img loading="lazy" width="466" height="344" src="./assets/ara249-466x344.jpg" class="attachment-product-gallery size-product-gallery" alt="Custom Blue Mack Super-Liner Fitted with Classic Super Single Wheels – US Fitment Showcase" decoding="async"></a>
-			</div></figure><figure class="gallery-item">
-			<div class="gallery-icon portrait">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="ce56bb2" data-elementor-lightbox-title="Kenworth Cabover Prime Mover Featuring Classic Super Single Wheels – Bobbins Transport Fleet" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ1NywidXJsIjoiaHR0cHM6XC9cL2FybW91cnlncm91cC5jb20uYXVcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjRcLzA0XC8yLTkuanBnIiwic2xpZGVzaG93IjoiY2U1NmJiMiJ9" href="https://armourygroup.com.au/wp-content/uploads/2024/04/2-9.jpg"><img loading="lazy" width="466" height="344" src="./assets/2-9-466x344.jpg" class="attachment-product-gallery size-product-gallery" alt="Kenworth Cabover Prime Mover Featuring Classic Super Single Wheels – Bobbins Transport Fleet" decoding="async"></a>
-			</div></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="ce56bb2" data-elementor-lightbox-title="Kenworth T900 with Classic Super Single Alloy Wheels – Road Train Ready at Kenworth Yatala" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ1NiwidXJsIjoiaHR0cHM6XC9cL2FybW91cnlncm91cC5jb20uYXVcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjRcLzA0XC8xLTguanBnIiwic2xpZGVzaG93IjoiY2U1NmJiMiJ9" href="https://armourygroup.com.au/wp-content/uploads/2024/04/1-8.jpg"><img loading="lazy" width="466" height="344" src="./assets/1-8-466x344.jpg" class="attachment-product-gallery size-product-gallery" alt="Kenworth T900 with Classic Super Single Alloy Wheels – Road Train Ready at Kenworth Yatala" decoding="async"></a>
-			</div></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="ce56bb2" data-elementor-lightbox-title="Kenworth W900 Displaying Chrome Detailing and Classic Super Single Wheels – Premium US Fitment" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ1NSwidXJsIjoiaHR0cHM6XC9cL2FybW91cnlncm91cC5jb20uYXVcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjRcLzA0XC8zLTYuanBnIiwic2xpZGVzaG93IjoiY2U1NmJiMiJ9" href="https://armourygroup.com.au/wp-content/uploads/2024/04/3-6.jpg"><img loading="lazy" width="466" height="344" src="./assets/3-6-466x344.jpg" class="attachment-product-gallery size-product-gallery" alt="Kenworth W900 Displaying Chrome Detailing and Classic Super Single Wheels – Premium US Fitment" decoding="async"></a>
-			</div></figure>
-		</div>
-		</div>
-						</div>
-				</div>
-				</div>
-				</div>
+				</div></div></div></div></div></section>
 		<div class="elementor-element elementor-element-dd2b2ec e-flex e-con-boxed e-con e-parent" data-id="dd2b2ec" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-a5a8496 e-con-full e-flex e-con e-child" data-id="a5a8496" data-element_type="container" data-e-type="container">
@@ -4747,9 +4778,50 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 <script id="ag-product-js">
 (function () {
   "use strict";
+  /* hero gallery: thumbnails swap the main image */
+  function gallery() {
+    var g = document.querySelector("[data-ag-gallery]");
+    if (!g) return;
+    var main = document.getElementById("ag-gallery-main");
+    var cap = document.getElementById("ag-gallery-cap");
+    var thumbs = g.querySelectorAll(".ag-gallery__thumb");
+    Array.prototype.forEach.call(thumbs, function (t) {
+      t.addEventListener("click", function () {
+        main.src = t.getAttribute("data-src");
+        cap.textContent = t.getAttribute("data-cap") || "";
+        Array.prototype.forEach.call(thumbs, function (o) { o.classList.remove("is-active"); });
+        t.classList.add("is-active");
+      });
+    });
+  }
+
+  /* project gallery: horizontal scroller with arrows */
+  function shots() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-ag-shots]"), function (w) {
+      var track = w.querySelector(".ag-shots__track");
+      function step(dir) {
+        var item = track.querySelector(".ag-shots__item");
+        track.scrollBy({ left: dir * ((item ? item.getBoundingClientRect().width : 320) + 16),
+                         behavior: "smooth" });
+      }
+      w.querySelector(".ag-shots__nav--prev").addEventListener("click", function () { step(-1); });
+      w.querySelector(".ag-shots__nav--next").addEventListener("click", function () { step(1); });
+      function sync() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        w.classList.toggle("at-start", track.scrollLeft <= 2);
+        w.classList.toggle("at-end", track.scrollLeft >= max);
+      }
+      track.addEventListener("scroll", sync);
+      window.addEventListener("resize", sync);
+      sync();
+    });
+  }
+
   function init() {
+    gallery();
+    shots();
     var bar = document.querySelector("[data-ag-sticky]");
-    var anchor = document.querySelector(".specs-wrapper");
+    var anchor = document.querySelector(".ag-specs") || document.querySelector(".specs-wrapper");
     if (!bar || !anchor) return;
 
     var rows = document.querySelectorAll(".specs-wrapper .variant-row");
