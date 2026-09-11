@@ -37,10 +37,39 @@ Two versions exist so the team compares one variable only:
 | US fitment | `fitment-us.html` | 7 |
 | Trailer fitment | `fitment-trailer.html` | 10 |
 | Volvo fitment | `fitment-volvo.html` | 1 |
+| Classic Super Single (product) | `classic-super-single.html` | - |
 
 Use the **Wheel Type** and **Wheel Fitment** bars to move between pages. Both stay pinned
 to the top as you scroll. Each page has a collapsible **SEO spec** panel showing the proposed
 title tag, meta description, H1, canonical and target keyword.
+
+## Product page
+
+`classic-super-single.html` is the **Classic Super Single** product page, duplicated from the live
+product source and dropped into the same structure. It is reachable from the Classic Super Single
+card on All Wheels, Super Single Wheels and the US fitment page.
+
+It carries the same navigation components as the category pages, plus two conversion changes:
+
+- **Breadcrumbs, attribute tags and the SEO spec panel.** Home / Wheels / Super Single / Classic
+  Super Single, with the wheel type and fitment tags linking back to their pages, so the product
+  sits inside the taxonomy rather than hanging off it.
+- **Persistent add bar.** The Specifications table is the only place on the page a buyer can act,
+  and it leaves the viewport early. A bar appears once that table has scrolled past and stays
+  anchored to the bottom of the window: finish picker (all three variants, selectable without
+  scrolling back), size and PCD, order number, and Add to Cart. The button forwards the click to
+  the matching table row rather than duplicating the cart logic. On mobile the finish takes its own
+  line above the order number and the button.
+- **Enquiry form replaced with a contact CTA.** The ten-field form at the foot of the page competed
+  with the add-to-quote path above it. The section now closes with one ask: Contact us, Download
+  Brochures, and the phone and email.
+
+The page's own saved assets sit in the shared `assets/` folder. The handful whose bytes differ from
+the copies the category pages already use (theme, reset, header CSS from another save date) are in
+`assets/product/`, so the existing pages are untouched.
+
+Rebuild with `python3 ../build-product-page.py` (one level up, outside both repos); it writes the
+page into both and rewires the inbound links.
 
 ## Treat this as a wireframe
 
@@ -82,7 +111,7 @@ Live URL: https://lilmonstersam.github.io/armoury-wheels-categories/
 
 ## Technical
 
-- Ten static HTML pages sharing one `assets/` folder (the live site's own CSS, images and fonts)
+- Eleven static HTML pages sharing one `assets/` folder (the live site's own CSS, images and fonts)
 - Agency FB Black is served from `assets/` rather than the live domain, so it renders without
   a cross-origin font request
 - `.nojekyll` is present so Pages serves the files as-is
