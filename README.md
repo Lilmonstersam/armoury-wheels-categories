@@ -66,11 +66,11 @@ It carries the same navigation components as the category pages, plus two conver
   across the full width, wheel vitals on the left and part numbers, finishes and Add to Quote on the
   right, with View quote beneath.
 - **Persistent add bar.** The Specifications table is the only place on the page a buyer can act,
-  and it leaves the viewport early. A bar appears once that table has scrolled past and stays
-  anchored to the bottom of the window: finish picker (all three variants, selectable without
-  scrolling back), size and PCD, order number, and Add to Cart. The button forwards the click to
-  the matching table row rather than duplicating the cart logic. On mobile the finish takes its own
-  line above the order number and the button.
+  and it leaves the viewport early. A bar is anchored to the bottom of the window for the whole
+  page: finish picker (all three variants, selectable without scrolling back), size and PCD, order
+  number, and Add to Cart. The button forwards the click to the matching table row rather than
+  duplicating the cart logic. On mobile the finish takes its own line above the order number and
+  the button.
 - **Enquiry form replaced with a contact CTA.** The ten-field form at the foot of the page competed
   with the add-to-quote path above it. The section now closes with one ask: Contact us, Download
   Brochures, and the phone and email.

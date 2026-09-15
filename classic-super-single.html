@@ -1342,8 +1342,6 @@ li.mega-menu-column:nth-child(5n){
 /* --- persistent add bar --------------------------------------------------- */
 .ag-sticky{position:fixed;left:0;right:0;bottom:0;z-index:9998;background:#0d0d0d;
   border-top:2px solid #F58220;box-shadow:0 -12px 34px rgba(0,0,0,.6);
-  transform:translateY(115%);opacity:0;visibility:hidden;
-  transition:transform .22s ease,opacity .22s ease,visibility .22s ease;
   font-family:"Montserrat",Arial,sans-serif}
 .ag-sticky.is-on{transform:none;opacity:1;visibility:visible}
 .ag-sticky__inner{display:flex;align-items:center;gap:14px 30px;box-sizing:border-box;
@@ -1381,7 +1379,8 @@ li.mega-menu-column:nth-child(5n){
 .ag-sticky__cta:hover,.ag-sticky__cta:focus{background:#d96f16 !important;border-color:#d96f16 !important;
   transform:translateY(-1px)}
 .ag-sticky__cta[disabled]{opacity:.65;cursor:default;transform:none}
-body.ag-sticky-on{padding-bottom:calc(var(--ag-sticky-h,80px) + 8px)}
+/* the page's own .hellochild__body-wrap is the scrolling block, so the
+   spacer that keeps the footer clear of the bar is set on it in JS */
 
 /* --- contact CTA in place of the enquiry form ----------------------------- */
 .ag-contactcta{display:flex;flex-direction:column;align-items:flex-start;gap:18px;
@@ -1481,11 +1480,25 @@ body.ag-sticky-on{padding-bottom:calc(var(--ag-sticky-h,80px) + 8px)}
 .ag-specs .specs-wrapper{max-width:none}
 /* the part-number rows carry their own label in the column subtitle, and the
    production 250px label column would squeeze them to one character per line */
-.ag-specs__table .spec-item{grid-template-columns:minmax(0,1fr);padding:0;border-bottom:0}
+/* production keeps a fixed 100-250px label track at every breakpoint, and with
+   the label hidden the value would drop into that track instead of the wide
+   one, so the single column has to win outright */
+.ag-specs__table .spec-item{grid-template-columns:minmax(0,1fr) !important;
+  column-gap:0 !important;padding:0 !important;border-bottom:0}
 .ag-specs__table .spec-item > .label{display:none}
-.ag-specs__table .spec-item.multi .value{gap:14px}
-.ag-specs__table .variant-row{padding-bottom:14px;border-bottom:1px solid #333}
-.ag-specs__table .variant-row:last-child{border-bottom:0;padding-bottom:0}
+.ag-specs__table .spec-item.multi .value{gap:14px;width:100% !important;min-width:0 !important}
+/* Production drives these rows with a grid whose fixed 190-270px action column
+   collapses the part-number cell to 0 once the page is narrower than about
+   700px, which wraps the label one character per line. Replaced with a flex
+   row that wraps, and stacks outright on a phone. */
+.ag-specs__table .spec-item.multi .variant-row{display:flex !important;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;gap:10px 16px;width:100% !important;
+  grid-template-columns:none !important;padding-bottom:14px;border-bottom:1px solid #333}
+.ag-specs__table .spec-item.multi .variant-row:last-child{border-bottom:0;padding-bottom:0}
+.ag-specs__table .spec-item.multi .variant-row > span{flex:1 1 190px !important;min-width:0 !important;
+  overflow-wrap:normal !important;word-break:normal !important}
+.ag-specs__table .spec-item.multi .variant-row > .product-actions{flex:0 0 auto !important;flex-direction:row !important;
+  width:auto !important;min-width:0 !important;max-width:none !important;gap:10px !important}
 .ag-specs__actions{margin-top:22px}
 @media(max-width:1024px){.ag-specs__title{font-size:34px}}
 @media(max-width:900px){
@@ -1493,6 +1506,9 @@ body.ag-sticky-on{padding-bottom:calc(var(--ag-sticky-h,80px) + 8px)}
   .ag-shots__nav{display:none}
 }
 @media(max-width:620px){
+  .ag-specs__table .spec-item.multi .variant-row{flex-direction:column !important;align-items:stretch;gap:10px}
+  .ag-specs__table .spec-item.multi .variant-row > span{flex:1 1 auto !important}
+  .ag-specs__table .spec-item.multi .variant-row > .product-actions{width:100% !important;justify-content:flex-start}
   .ag-specs{padding:34px 20px 48px}
   .ag-specs__title{font-size:28px}
   .ag-shotsband{padding:0 20px 8px}
@@ -4821,8 +4837,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     gallery();
     shots();
     var bar = document.querySelector("[data-ag-sticky]");
-    var anchor = document.querySelector(".ag-specs") || document.querySelector(".specs-wrapper");
-    if (!bar || !anchor) return;
+    if (!bar) return;
 
     var rows = document.querySelectorAll(".specs-wrapper .variant-row");
     var select = document.getElementById("ag-sticky-select");
@@ -4858,22 +4873,19 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
       }, 250);
     });
 
-    /* A scroll listener rather than an IntersectionObserver: IO reports a state
-       CHANGE, and a jump link can clear the whole table between two frames. */
-    var visible = null, queued = false;
-    function show(on) {
-      if (on === visible) return;
-      visible = on;
-      bar.classList.toggle("is-on", on);
-      bar.setAttribute("aria-hidden", on ? "false" : "true");
-      document.body.classList.toggle("ag-sticky-on", on);
-      document.documentElement.style.setProperty("--ag-sticky-h", (bar.offsetHeight || 80) + "px");
+    /* Always on: the bar is the page's standing add-to-quote control, not a
+       scroll reveal, so it is shown from first paint and never hidden. */
+    var wrap = document.querySelector(".hellochild__body-wrap") || document.body;
+    function size() {
+      var h = (bar.offsetHeight || 80) + 8;
+      document.documentElement.style.setProperty("--ag-sticky-h", h + "px");
+      wrap.style.paddingBottom = h + "px";
     }
-    function check() { queued = false; show(anchor.getBoundingClientRect().bottom < 0); }
-    function onScroll() { if (queued) return; queued = true; requestAnimationFrame(check); }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    check();
+    bar.classList.add("is-on");
+    bar.setAttribute("aria-hidden", "false");
+    document.body.classList.add("ag-sticky-on");
+    size();
+    window.addEventListener("resize", size);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
