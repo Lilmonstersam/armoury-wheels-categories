@@ -27,6 +27,7 @@ Two versions exist so the team compares one variable only:
 
 | Page | File | Products |
 |---|---|---|
+| Armoury Wheels homepage | `armoury-wheels/index.html` | - |
 | All Wheels (parent) | `index.html` | 25 |
 | Drive Wheels | `drive-wheels.html` | 9 |
 | Steers | `steer-wheels.html` | 6 |
@@ -122,7 +123,7 @@ Live URL: https://lilmonstersam.github.io/armoury-wheels-categories/
 
 ## Technical
 
-- Eleven static HTML pages sharing one `assets/` folder (the live site's own CSS, images and fonts)
+- Twelve static HTML pages, with the imported homepage carrying its saved asset bundle
 - Agency FB Black is served from `assets/` rather than the live domain, so it renders without
   a cross-origin font request
 - `.nojekyll` is present so Pages serves the files as-is
