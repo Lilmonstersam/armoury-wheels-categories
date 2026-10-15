@@ -4,6 +4,27 @@ Clickable mockup of the proposed **Armoury Wheels** category page structure, bui
 
 **Option A: with fitment sections**
 
+Trust content updated 15 October 2026: the homepage now uses supplied customer
+accounts from Tuff Trailers, Wickham Freight Lines and Stiven Marusic, plus quotes
+from Muscat Trailers, Gippsland Truck Centre and The Truck Specialists. Customer
+photos and illustrative range images are captioned accordingly. All twelve pages
+separate Armoury Group's ISO quality, environmental and safety certification from
+wheel product certification (DOT, TÜV, VIA) and manufacturing certification
+(IATF 16949, ISO 14001). The four supplied certification images are local in
+`assets/trust/` as transparent PNGs; VIA uses text because no artwork was supplied. The shared styling
+is in `assets/trust-signals.css`.
+
+After regenerating pages, run `tools/update-trust-signals.py` from the parent
+Armoury Group workspace (Python with `lxml`). The source mapping is recorded in
+that workspace's `tools/trust-signal-sources.md`.
+
+The saved header, mega-menu and range links now use local routes wherever that
+page exists in this mockup, including Classic Super Single. The product builder
+also retains the shared certification section when regenerating the product page.
+The certification logos use the same unframed horizontal layout as Stainless:
+logo beside the certification name and description. The AS/Wheels switch uses the
+sibling mockup locally, with a GitHub Pages destination after deployment.
+
 ## What this is
 
 A prototype of the proposed URL and navigation restructure for
