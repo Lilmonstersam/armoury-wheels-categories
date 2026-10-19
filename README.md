@@ -4,6 +4,11 @@ Clickable mockup of the proposed **Armoury Wheels** category page structure, bui
 
 **Option A: with fitment sections**
 
+Homepage update, 19 October 2026: the separate Aussie Made section has been
+consolidated into Quality to rely on. Group heritage, Australian-made accessories
+copy and the Our Story link remain there alongside the wheel certifications.
+The origin wording describes accessories, not the alloy wheel manufacturing location.
+
 Trust content updated 15 October 2026: the homepage now uses supplied customer
 accounts from Tuff Trailers, Wickham Freight Lines and Stiven Marusic, plus quotes
 from Muscat Trailers, Gippsland Truck Centre and The Truck Specialists. Customer
