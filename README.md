@@ -157,3 +157,12 @@ Live URL: https://lilmonstersam.github.io/armoury-wheels-categories/
 ---
 
 Prepared by Digilari for Armoury Group.
+
+Homepage consolidation, 19 October 2026: experience claims now use 50+ years.
+Customer stories replace the separate homepage gallery, with a View Gallery link.
+The closing section retains its previous branded headings, background and contact
+card styling, with one consolidated paragraph, Contact Us and View Range actions,
+and phone/email details.
+The alloy-wheel introduction is merged into the benefits section; warranty and
+certification details appear only in Quality. All six customer accounts now sit
+together in Wheels at work.
