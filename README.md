@@ -166,3 +166,7 @@ and phone/email details.
 The alloy-wheel introduction is merged into the benefits section; warranty and
 certification details appear only in Quality. All six customer accounts now sit
 together in Wheels at work.
+
+Client feedback update, 6 November 2026: supplied brand messages/icons, customer
+photographs and precise ISO management-system scope are now applied throughout.
+See [REVIEW-NOTES.md](REVIEW-NOTES.md) for changes and the certificate renewal request.

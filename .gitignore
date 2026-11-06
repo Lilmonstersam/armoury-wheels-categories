@@ -4,6 +4,10 @@
 .LSOverride
 Icon?
 
+# Client-supplied website artwork, not macOS custom folder icons.
+!/assets/trust/icons/
+!/assets/trust/icons/*.svg
+
 # Windows
 Thumbs.db
 ehthumbs.db
