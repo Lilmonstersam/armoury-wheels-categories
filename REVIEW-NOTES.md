@@ -30,6 +30,6 @@ All 18 mockup pages were checked in desktop and mobile browsers. The updated sec
 
 ## 13 November 2026: homepage feedback
 
-The homepage now leads with an orange Get a quote button and a secondary View range button. The five-wheel picker is unchanged; its duplicate range prompt has been removed. Why Armoury brings together six benefits, led by the five-year warranty. The collapsed certification strip is 125 px at a 1440 px viewport; Standards details expands the full scope. The Truck Specialists and Muscat Trailers lead with one photo and quote each, with four more testimonials available on demand.
+The homepage now leads with an orange Get a quote button and a secondary View range button. The five-wheel picker is unchanged; its duplicate range prompt has been removed. Why Armoury brings together six benefits, led by the five-year warranty, on a charcoal background with orange accents. The collapsed certification strip is 125 px at a 1440 px viewport; Standards details expands the full scope. The Truck Specialists and Muscat Trailers lead with one photo and quote each, with four more testimonials available on demand.
 
-The homepage social rail is gone; footer links remain. The dismissible sticky bar appears only after the hero and hides as the final enquiry enters view. The final enquiry styling and non-homepage layouts are retained. The request above for the renewed ISO Certificate of Conformity remains open.
+The homepage social rail is gone; footer links remain. The dismissible sticky bar appears only after the hero and hides as the final enquiry enters view. The final enquiry retains both Get a quote and View range. Non-homepage layouts are retained. The request above for the renewed ISO Certificate of Conformity remains open.

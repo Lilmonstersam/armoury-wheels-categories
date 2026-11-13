@@ -27,13 +27,12 @@
 .elementor .ag-hero-actions .ag-hero-actions__quote:hover { background: #ffac68; }
 
 .ag-benefits--home {
-  background: #e6e7e8;
-  color: #191b1f;
+  background: #191b1f;
+  color: #fff;
   padding-block: 62px;
 }
 .ag-benefits--home .ag-benefits__head { margin-bottom: 26px; }
-.ag-benefits--home h2 { color: #191b1f; }
-.ag-benefits--home .ag-benefits__intro { color: #383c42; font-size: 16px; }
+.ag-benefits--home .ag-benefits__intro { color: #d1d3d8; font-size: 16px; }
 .ag-home-benefits {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -43,14 +42,14 @@
   padding: 0;
 }
 .ag-home-benefits li {
-  border-top: 1px solid #aaaeb2;
+  border-top: 1px solid #41444a;
   padding: 18px 0 20px;
   min-width: 0;
 }
-.ag-home-benefits li:first-child { border-top: 3px solid #a84406; padding-top: 16px; }
+.ag-home-benefits li:first-child { border-top: 3px solid var(--orange); padding-top: 16px; }
 .ag-benefit-number {
   display: block;
-  color: #974009;
+  color: var(--orange);
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 6px;
@@ -58,10 +57,10 @@
 .ag-home-benefits h3 {
   font: 400 clamp(25px, 2.2vw, 34px)/1.1 ArmouryTrust, Agency, sans-serif;
   text-transform: uppercase;
-  color: #191b1f;
+  color: #fff;
   margin: 0 0 7px;
 }
-.ag-home-benefits p { font-size: 16px; line-height: 1.5; color: #383c42; margin: 0; }
+.ag-home-benefits p { font-size: 16px; line-height: 1.5; color: #d1d3d8; margin: 0; }
 
 .ag-home-standards {
   background: #f6f6f5;
