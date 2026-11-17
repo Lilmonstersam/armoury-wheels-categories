@@ -33,3 +33,21 @@ All 18 mockup pages were checked in desktop and mobile browsers. The updated sec
 The homepage now leads with an orange Get a quote button and a secondary View range button. The five-wheel picker is unchanged; its duplicate range prompt has been removed. Why Armoury brings together six benefits, led by the five-year warranty, on a charcoal background with orange accents. The collapsed certification strip is 125 px at a 1440 px viewport; Standards details expands the full scope. The Truck Specialists and Muscat Trailers lead with one photo and quote each, with four more testimonials available on demand.
 
 The homepage social rail is gone; footer links remain. The dismissible sticky bar appears only after the hero and hides as the final enquiry enters view. The final enquiry uses its pre-review Contact Us and View range buttons. Non-homepage layouts are retained. The request above for the renewed ISO Certificate of Conformity remains open.
+
+## 17 November 2026: colour and motion
+
+Client feedback: the homepage felt flat next to the live page.
+
+- Hero slider restored. The saved page carried the slider's running state, so it collapsed when it started again and a static-image override had been added. The hero now uses the server markup and rotates as on live.
+- The wheel picker fades in as it scrolls into view, as on live. The saved page had already played the animation.
+- Why Armoury now sits in an orange band with the live textured black panel. The standards strip is dark with an orange rule instead of light grey.
+- The four supporting testimonials rotate every five seconds with previous/next buttons, replacing the collapsed More customer stories list.
+- Legends of the Open Road photo carousel restored as an orange section before the closing enquiry.
+- Scroll reveal on the new sections and hover zoom on customer story photos. Both are off when the visitor has reduced motion set.
+
+## 17 November 2026: second round
+
+- Social media sidebar restored on the homepage, matching the other pages.
+- One CTA style across the mockup: Agency, uppercase, white, orange underline, as on the Stainless Browse Our Range. Where two CTAs sit together, the primary is filled orange (Get a Quote, Contact Us, Add to Cart). Product-card Add and Download Brochure buttons and the enquiry form's Send button keep their existing styles.
+- Footer held to its column with a right inset, so Follow us no longer sits against the edge.
+- Standards & certifications: DOT, TÜV and IATF badges shown in full colour on white tiles, with VIA and ISO as matching text tiles.
