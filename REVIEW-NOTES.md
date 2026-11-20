@@ -51,3 +51,16 @@ Client feedback: the homepage felt flat next to the live page.
 - One CTA style across the mockup: Agency, uppercase, white, orange underline, as on the Stainless Browse Our Range. Where two CTAs sit together, the primary is filled orange (Get a Quote, Contact Us, Add to Cart). Product-card Add and Download Brochure buttons and the enquiry form's Send button keep their existing styles.
 - Footer held to its column with a right inset, so Follow us no longer sits against the edge.
 - Standards & certifications: DOT, TÜV and IATF badges shown in full colour on white tiles, with VIA and ISO as matching text tiles.
+
+
+## 20 November 2026: 6 stud truck wheels product
+
+Added the Light Truck Drive/Steer 6 stud product using the Classic Super Single
+layout. Copy qualifies the six-stud topic with truck and 6/222, with fitment FAQs
+for Japanese trucks and Isuzu NPR searches. Specifications and the two orderable
+finishes match the official product source. All matching product links now open
+the local mockup. Full keyword/source notes are in docs/6-stud-keyword-research.md.
+
+Please verify the vehicle/axle fitment wording, part numbers, published load and
+dimensions, imagery and proposed SEO copy before client-site implementation.
+The existing request for the renewed ISO certificate remains open.

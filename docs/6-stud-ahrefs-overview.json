@@ -1,0 +1,177 @@
+{
+  "keywords": [
+    {
+      "keyword": "light truck rims",
+      "volume": 30,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": null
+    },
+    {
+      "keyword": "16 inch truck rims",
+      "volume": 10,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {
+        "informational": false,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": null
+    },
+    {
+      "keyword": "6 stud wheels",
+      "volume": 70,
+      "difficulty": 0,
+      "parent_topic": "rims and tyres",
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": "2026-10-22T14:57:50Z"
+    },
+    {
+      "keyword": "6 stud rims",
+      "volume": 90,
+      "difficulty": 0,
+      "parent_topic": "wheels",
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": "2026-11-01T13:49:56Z"
+    },
+    {
+      "keyword": "isuzu truck rims",
+      "volume": 10,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": true,
+        "local": false
+      },
+      "serp_last_update": null
+    },
+    {
+      "keyword": "japanese truck wheels",
+      "volume": 20,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": null
+    },
+    {
+      "keyword": "alloy truck rims",
+      "volume": 70,
+      "difficulty": 0,
+      "parent_topic": "truck rims for sale",
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": "2026-11-16T11:45:08Z"
+    },
+    {
+      "keyword": "truck rims",
+      "volume": 90,
+      "difficulty": 0,
+      "parent_topic": "light truck wheels",
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": false
+      },
+      "serp_last_update": "2026-10-20T00:46:26Z"
+    },
+    {
+      "keyword": "isuzu npr wheels",
+      "volume": 10,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {},
+      "serp_last_update": null
+    },
+    {
+      "keyword": "isuzu truck wheels",
+      "volume": 10,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": true,
+        "local": false
+      },
+      "serp_last_update": null
+    },
+    {
+      "keyword": "isuzu alloy wheels",
+      "volume": 10,
+      "difficulty": null,
+      "parent_topic": null,
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": true,
+        "local": false
+      },
+      "serp_last_update": null
+    },
+    {
+      "keyword": "truck alloy wheels",
+      "volume": 80,
+      "difficulty": 0,
+      "parent_topic": "alcoa rims",
+      "intents": {
+        "informational": true,
+        "navigational": false,
+        "commercial": true,
+        "transactional": true,
+        "branded": false,
+        "local": true
+      },
+      "serp_last_update": "2026-11-15T22:53:42Z"
+    }
+  ]
+}

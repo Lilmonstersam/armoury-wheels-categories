@@ -65,6 +65,7 @@ Two versions exist so the team compares one variable only:
 | Trailer fitment | `fitment-trailer.html` | 10 |
 | Volvo fitment | `fitment-volvo.html` | 1 |
 | Classic Super Single (product) | `classic-super-single.html` | - |
+| Light Truck Drive/Steer 6 stud (product) | `light-truck-drive-steer-6-stud.html` | - |
 
 Use the **Wheel Type** and **Wheel Fitment** bars to move between pages. Both stay pinned
 to the top as you scroll. Each page has a collapsible **SEO spec** panel showing the proposed
@@ -170,3 +171,18 @@ together in Wheels at work.
 Client feedback update, 6 November 2026: supplied brand messages/icons, customer
 photographs and precise ISO management-system scope are now applied throughout.
 See [REVIEW-NOTES.md](REVIEW-NOTES.md) for changes and the certificate renewal request.
+
+
+## 6 stud truck-wheel product mockup, 20 November 2026
+
+`light-truck-drive-steer-6-stud.html` follows the Classic Super Single layout with
+product-specific 16 × 5.5-inch / 6/222 specifications, two genuine finish variants,
+local product/gallery images, fitment FAQs and a working local quote selector.
+All matching product links in this mockup's cards and menus point to the new page.
+Ahrefs Australia insights, source verification and keyword mapping are recorded in
+[the research notes](docs/6-stud-keyword-research.md).
+
+Rebuild: `python3 ../build-light-truck-product-page.py` (bundled Python with lxml).
+The page-specific styles and interaction are in `assets/light-truck-6-stud.css`
+and `assets/light-truck-6-stud.js`. Quote selections use local storage and can be
+reviewed in a dialog; no live cart requests are made by the new controls.

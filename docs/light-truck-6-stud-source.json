@@ -1,0 +1,105 @@
+{
+  "productId": 4275,
+  "productName": "Light Truck Drive/Steer 6 stud",
+  "productSku": "ARX217-32",
+  "productUrl": "https://armourygroup.com.au/product/light-truck-drive-steer-6-stud/",
+  "quantity": 1,
+  "variations": {
+    "4299": {
+      "sku": "ARA217-32",
+      "attributes": {
+        "pcd": "6/222",
+        "pa_finish": "armourbrite",
+        "inset-mm": "106",
+        "outset-mm": "122",
+        "thickness-mm": "16",
+        "number-of-stud-holes": "6",
+        "pcd2": "222",
+        "stud-hole-dia-mm": "32",
+        "centre-bore-dia-mm": "164",
+        "max-load-kg": "1320",
+        "weight-kg": "8.6",
+        "valve": "TR553C",
+        "tyre": "7.00R16LT",
+        "product-size": "16” x 5.5” | 6 Stud",
+        "product-size-tag": "16” x 5.5”"
+      }
+    },
+    "4306": {
+      "sku": "ARP217-32",
+      "attributes": {
+        "pcd": "6/222",
+        "pa_finish": "polished",
+        "inset-mm": "106",
+        "outset-mm": "122",
+        "thickness-mm": "16",
+        "number-of-stud-holes": "6",
+        "pcd2": "222",
+        "stud-hole-dia-mm": "32",
+        "centre-bore-dia-mm": "164",
+        "max-load-kg": "1320",
+        "weight-kg": "8.6",
+        "valve": "TR553C",
+        "tyre": "7.00R16LT",
+        "product-size": "16” x 5.5” | 6 Stud",
+        "product-size-tag": "16” x 5.5”"
+      }
+    }
+  },
+  "source": "https://armourygroup.com.au/product/light-truck-drive-steer-6-stud/",
+  "verified": "2026-11-20",
+  "specifications": [
+    [
+      "Wheel size",
+      "16 × 5.5 inches"
+    ],
+    [
+      "PCD",
+      "6/222"
+    ],
+    [
+      "Inset (mm)",
+      "106"
+    ],
+    [
+      "Outset (mm)",
+      "122"
+    ],
+    [
+      "Thickness (mm)",
+      "16"
+    ],
+    [
+      "Number of stud holes",
+      "6"
+    ],
+    [
+      "Stud hole diameter (mm)",
+      "32"
+    ],
+    [
+      "Centre bore diameter (mm)",
+      "164"
+    ],
+    [
+      "Maximum load (kg)",
+      "1320"
+    ],
+    [
+      "Weight (kg)",
+      "8.6"
+    ],
+    [
+      "Valve",
+      "TR553C"
+    ],
+    [
+      "Tyre",
+      "7.00R16LT"
+    ]
+  ],
+  "renderImages": [
+    "https://armourygroup.com.au/wp-content/uploads/2024/04/LIGHT-TRUCK-DRIVE_STEER_-1.png",
+    "https://armourygroup.com.au/wp-content/uploads/2024/04/LIGHT-TRUCK-DRIVE_STEER_inside.png"
+  ]
+}
